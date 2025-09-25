@@ -94,10 +94,10 @@
   .continue-btn {
     padding: 10px 20px;
     font-size: 1rem;
-    background: #f8f8f8;
+    background: #150909;
     border: none;
     border-radius: 20px;
-    color: white;
+    color: rgb(246, 246, 246);
     font-weight: bold;
     cursor: pointer;
     opacity: 0;
@@ -117,8 +117,7 @@
   <div class="intro" id="introText">
     Here is my feeling to you, I know sometimes I might be sensitive and ridiculous.
   </div>
-<button class="btn" onclick="window.location.href='continue.html'">Read it</button>
-
+  <button class="btn" onclick="showLetter()">Read it</button>
 
   <div class="letter" id="letterBox">
     <p id="typedText"></p>
@@ -126,7 +125,8 @@
   </div>
 
   <!-- Continue Button Below Letter -->
-  <button class="continue-btn" id="continueBtn" onclick="continueAction()">Continue →</button>
+ <button class="continue-btn" id="continueBtn" onclick="window.location.href='continue.html'">Continue →</button>
+
 
 <script>
   const message = `Dear Babyy Kagnchana,
@@ -174,4 +174,3 @@ Vutha Daraleap`;
 </script>
 </body>
 </html>
-

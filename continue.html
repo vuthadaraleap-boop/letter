@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Do You Choose Me?</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "Georgia", serif;
+    background: linear-gradient(135deg, #66bbff, #0cb6dd);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    text-align: center;
+  }
+  h1 { font-size: 2rem; margin-bottom: 50px; }
+  .choice-btn {
+    padding: 15px 30px;
+    margin: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .yes { background: #ff66cc; }
+  .yes:hover { background: #ff3399; transform: scale(1.1); }
+  .no { background: #888888; }
+  .no:hover { background: #555555; transform: scale(1.1); }
+</style>
+</head>
+<body>
+  <h1>Do you still choose me, Kagnchana?</h1>
+  <a href="yes.html" class="choice-btn yes">Yes 💖 Continue Together</a>
+  <a href="no.html" class="choice-btn no">No 😢</a>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>A Letter for You</title>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "Georgia", serif;
+    background: #0cb6dd;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+    padding: 20px;
+  }
+  .intro {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    opacity: 1;
+    transition: opacity 1s ease;
+    max-width: 600px;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #f5eeef;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #050202;
+    transition: 0.3s;
+  }
+  .btn:hover {
+    background: #0ed8f3;
+  }
+  .letter {
+    display: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      #fdf6e3 0px,
+      #fdf6e3 27px,
+      #d2d2d2 28px
+    );
+    color: #333;
+    padding: 40px 30px 60px 70px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    max-height: 70vh;
+    overflow-y: auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+    position: relative;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    font-family: "Courier New", monospace;
+    margin-bottom: 20px;
+  }
+  .letter::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 100%;
+    background-image: radial-gradient(circle, #1e1e2f 6px, transparent 7px);
+    background-size: 25px 40px;
+    background-repeat: repeat-y;
+    background-position: center;
+    pointer-events: none;
+  }
+  .signature {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 180px;
+    opacity: 0.9;
+    pointer-events: none;
+    transform: rotate(-2deg);
+  }
+  /* Continue Button Below Letter */
+  .continue-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #f8f8f8;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+  }
+  .continue-btn:hover {
+    background: #06e9e9;
+  }
+  .continue-btn.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+  <div class="intro" id="introText">
+    Here is my feeling to you, I know sometimes I might be sensitive and ridiculous.
+  </div>
+  <button class="btn" onclick="showLetter()">Read it</button>
+
+  <div class="letter" id="letterBox">
+    <p id="typedText"></p>
+    <img src="ttd.png" alt="Signature" class="signature" />
+  </div>
+
+  <!-- Continue Button Below Letter -->
+  <button class="continue-btn" id="continueBtn" onclick="continueAction()">Continue →</button>
+
+<script>
+  const message = `Dear Babyy Kagnchana,
+
+I'm sorry for being sensitive and upsetting you sometimes and making you feel uneasy. But I always love you in every situation and never give up on you. To be honest, you are really the first woman that has shown me so much, taught me so much, and loved me in a way we call love—not like fake love or just infatuation—but real love.
+
+I always think about our moments together, the laughter, the talks, and even our disagreements. You taught me patience, understanding, and what it truly means to care for someone unconditionally.
+
+I promise to always cherish you, respect you, and stand by you. You are my inspiration and my heart's home. No matter the distance or the challenges, my love for you remains unwavering.
+
+I love you deeply, completely, and endlessly.
+
+Forever yours,
+Vutha Daraleap`;
+
+  function showLetter() {
+    document.getElementById("introText").style.opacity = 0;
+    document.querySelector(".btn").style.display = "none";
+
+    setTimeout(() => {
+      const letterBox = document.getElementById("letterBox");
+      const typedText = document.getElementById("typedText");
+      letterBox.style.display = "block";
+      let i = 0;
+
+      function typeWriter() {
+        if (i < message.length) {
+          typedText.innerHTML += message.charAt(i);
+          i++;
+          setTimeout(typeWriter, 30);
+        } else {
+          // Show continue button below letter
+          const continueBtn = document.getElementById("continueBtn");
+          continueBtn.classList.add("show");
+        }
+      }
+
+      typeWriter();
+    }, 600);
+  }
+
+  function continueAction() {
+    alert("You clicked Continue! Add more actions here.");
+  }
+</script>
+</body>
+</html>
